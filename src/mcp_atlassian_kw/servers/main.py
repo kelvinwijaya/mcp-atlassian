@@ -15,14 +15,14 @@ from starlette.middleware.base import BaseHTTPMiddleware, RequestResponseEndpoin
 from starlette.requests import Request
 from starlette.responses import JSONResponse
 
-from mcp_atlassian.confluence import ConfluenceFetcher
-from mcp_atlassian.confluence.config import ConfluenceConfig
-from mcp_atlassian.jira import JiraFetcher
-from mcp_atlassian.jira.config import JiraConfig
-from mcp_atlassian.utils.environment import get_available_services
-from mcp_atlassian.utils.io import is_read_only_mode
-from mcp_atlassian.utils.logging import mask_sensitive
-from mcp_atlassian.utils.tools import get_enabled_tools, should_include_tool
+from mcp_atlassian_kw.confluence import ConfluenceFetcher
+from mcp_atlassian_kw.confluence.config import ConfluenceConfig
+from mcp_atlassian_kw.jira import JiraFetcher
+from mcp_atlassian_kw.jira.config import JiraConfig
+from mcp_atlassian_kw.utils.environment import get_available_services
+from mcp_atlassian_kw.utils.io import is_read_only_mode
+from mcp_atlassian_kw.utils.logging import mask_sensitive
+from mcp_atlassian_kw.utils.tools import get_enabled_tools, should_include_tool
 
 from .confluence import confluence_mcp
 from .context import MainAppContext

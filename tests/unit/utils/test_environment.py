@@ -4,7 +4,7 @@ import logging
 
 import pytest
 
-from mcp_atlassian.utils.environment import get_available_services
+from mcp_atlassian_kw.utils.environment import get_available_services
 from tests.utils.assertions import assert_log_contains
 from tests.utils.mocks import MockEnvironment
 

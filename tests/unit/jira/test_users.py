@@ -5,8 +5,8 @@ from unittest.mock import MagicMock, patch
 import pytest
 import requests
 
-from mcp_atlassian.jira.config import JiraConfig
-from mcp_atlassian.jira.users import UsersMixin
+from mcp_atlassian_kw.jira.config import JiraConfig
+from mcp_atlassian_kw.jira.users import UsersMixin
 
 
 class TestUsersMixin:
@@ -510,7 +510,7 @@ class TestUsersMixin:
         users_mixin.config.is_cloud = True
 
         with patch(
-            "src.mcp_atlassian.jira.users.JiraUser.from_api_response"
+            "src.mcp_atlassian_kw.jira.users.JiraUser.from_api_response"
         ) as mock_from_api_response:
             mock_user_instance = MagicMock()
             mock_from_api_response.return_value = mock_user_instance
@@ -533,7 +533,7 @@ class TestUsersMixin:
         users_mixin.config.is_cloud = False
 
         with patch(
-            "src.mcp_atlassian.jira.users.JiraUser.from_api_response"
+            "src.mcp_atlassian_kw.jira.users.JiraUser.from_api_response"
         ) as mock_from_api_response:
             mock_user_instance = MagicMock()
             mock_from_api_response.return_value = mock_user_instance
@@ -557,7 +557,7 @@ class TestUsersMixin:
             return_value="5b10ac8d82e05b22cc7d4ef5"
         )
         with patch(
-            "src.mcp_atlassian.jira.users.JiraUser.from_api_response"
+            "src.mcp_atlassian_kw.jira.users.JiraUser.from_api_response"
         ) as mock_from_api_response:
             mock_user_instance = MagicMock()
             mock_from_api_response.return_value = mock_user_instance
@@ -601,7 +601,7 @@ class TestUsersMixin:
         mock_response.status_code = 403
         http_error = requests.exceptions.HTTPError(response=mock_response)
         users_mixin.jira.user = MagicMock(side_effect=http_error)
-        from mcp_atlassian.exceptions import MCPAtlassianAuthenticationError
+        from mcp_atlassian_kw.exceptions import MCPAtlassianAuthenticationError
 
         with pytest.raises(
             MCPAtlassianAuthenticationError,

@@ -4,9 +4,9 @@ from unittest.mock import MagicMock, call
 
 import pytest
 
-from mcp_atlassian.jira import JiraFetcher
-from mcp_atlassian.jira.epics import EpicsMixin
-from mcp_atlassian.models.jira import JiraIssue
+from mcp_atlassian_kw.jira import JiraFetcher
+from mcp_atlassian_kw.jira.epics import EpicsMixin
+from mcp_atlassian_kw.models.jira import JiraIssue
 
 
 class TestEpicsMixin:

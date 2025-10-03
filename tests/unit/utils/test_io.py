@@ -3,7 +3,7 @@
 import os
 from unittest.mock import patch
 
-from mcp_atlassian.utils.io import is_read_only_mode
+from mcp_atlassian_kw.utils.io import is_read_only_mode
 
 
 def test_is_read_only_mode_default():

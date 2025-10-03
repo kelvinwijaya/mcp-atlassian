@@ -11,7 +11,7 @@ from typing import Any
 
 from pydantic import Field
 
-from mcp_atlassian.utils import parse_date
+from mcp_atlassian_kw.utils import parse_date
 
 from ..base import ApiModel, TimestampMixin
 from ..constants import (

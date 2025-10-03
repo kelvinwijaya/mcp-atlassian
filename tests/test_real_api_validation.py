@@ -28,22 +28,22 @@ from fastmcp import Client
 from fastmcp.client import FastMCPTransport
 from mcp.types import TextContent
 
-from mcp_atlassian.confluence import ConfluenceFetcher
-from mcp_atlassian.confluence.comments import CommentsMixin as ConfluenceCommentsMixin
-from mcp_atlassian.confluence.config import ConfluenceConfig
-from mcp_atlassian.confluence.labels import LabelsMixin as ConfluenceLabelsMixin
-from mcp_atlassian.confluence.pages import PagesMixin
-from mcp_atlassian.confluence.search import SearchMixin as ConfluenceSearchMixin
-from mcp_atlassian.jira import JiraFetcher
-from mcp_atlassian.jira.config import JiraConfig
-from mcp_atlassian.jira.links import LinksMixin
-from mcp_atlassian.models.confluence import (
+from mcp_atlassian_kw.confluence import ConfluenceFetcher
+from mcp_atlassian_kw.confluence.comments import CommentsMixin as ConfluenceCommentsMixin
+from mcp_atlassian_kw.confluence.config import ConfluenceConfig
+from mcp_atlassian_kw.confluence.labels import LabelsMixin as ConfluenceLabelsMixin
+from mcp_atlassian_kw.confluence.pages import PagesMixin
+from mcp_atlassian_kw.confluence.search import SearchMixin as ConfluenceSearchMixin
+from mcp_atlassian_kw.jira import JiraFetcher
+from mcp_atlassian_kw.jira.config import JiraConfig
+from mcp_atlassian_kw.jira.links import LinksMixin
+from mcp_atlassian_kw.models.confluence import (
     ConfluenceComment,
     ConfluenceLabel,
     ConfluencePage,
 )
-from mcp_atlassian.models.jira import JiraIssueLinkType
-from mcp_atlassian.servers import main_mcp
+from mcp_atlassian_kw.models.jira import JiraIssueLinkType
+from mcp_atlassian_kw.servers import main_mcp
 
 
 # Resource tracking for cleanup

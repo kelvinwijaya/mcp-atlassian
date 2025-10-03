@@ -7,13 +7,13 @@ from typing import TYPE_CHECKING, TypeVar
 import requests
 from requests.exceptions import HTTPError
 
-from mcp_atlassian.exceptions import MCPAtlassianAuthenticationError
-from mcp_atlassian.models.jira.common import JiraUser
+from mcp_atlassian_kw.exceptions import MCPAtlassianAuthenticationError
+from mcp_atlassian_kw.models.jira.common import JiraUser
 
 from .client import JiraClient
 
 if TYPE_CHECKING:
-    from mcp_atlassian.models.jira.common import JiraUser
+    from mcp_atlassian_kw.models.jira.common import JiraUser
 
 JiraUserType = TypeVar("JiraUserType", bound="JiraUser")
 

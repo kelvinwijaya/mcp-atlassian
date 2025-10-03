@@ -7,12 +7,12 @@ from importlib.metadata import PackageNotFoundError, version
 import click
 from dotenv import load_dotenv
 
-from mcp_atlassian.utils.env import is_env_truthy
-from mcp_atlassian.utils.lifecycle import (
+from mcp_atlassian_kw.utils.env import is_env_truthy
+from mcp_atlassian_kw.utils.lifecycle import (
     ensure_clean_exit,
     setup_signal_handlers,
 )
-from mcp_atlassian.utils.logging import setup_logging
+from mcp_atlassian_kw.utils.logging import setup_logging
 
 try:
     __version__ = version("mcp-atlassian")
@@ -306,7 +306,7 @@ def main(
     if click_ctx and was_option_provided(click_ctx, "jira_projects_filter"):
         os.environ["JIRA_PROJECTS_FILTER"] = jira_projects_filter
 
-    from mcp_atlassian.servers import main_mcp
+    from mcp_atlassian_kw.servers import main_mcp
 
     run_kwargs = {
         "transport": final_transport,

@@ -7,7 +7,7 @@ import requests
 from fastmcp import Context
 from requests.exceptions import HTTPError
 
-from mcp_atlassian.exceptions import MCPAtlassianAuthenticationError
+from mcp_atlassian_kw.exceptions import MCPAtlassianAuthenticationError
 
 logger = logging.getLogger(__name__)
 

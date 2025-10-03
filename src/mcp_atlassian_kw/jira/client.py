@@ -7,15 +7,15 @@ from typing import Any, Literal
 from atlassian import Jira
 from requests import Session
 
-from mcp_atlassian.exceptions import MCPAtlassianAuthenticationError
-from mcp_atlassian.preprocessing import JiraPreprocessor
-from mcp_atlassian.utils.logging import (
+from mcp_atlassian_kw.exceptions import MCPAtlassianAuthenticationError
+from mcp_atlassian_kw.preprocessing import JiraPreprocessor
+from mcp_atlassian_kw.utils.logging import (
     get_masked_session_headers,
     log_config_param,
     mask_sensitive,
 )
-from mcp_atlassian.utils.oauth import configure_oauth_session
-from mcp_atlassian.utils.ssl import configure_ssl_verification
+from mcp_atlassian_kw.utils.oauth import configure_oauth_session
+from mcp_atlassian_kw.utils.ssl import configure_ssl_verification
 
 from .config import JiraConfig
 

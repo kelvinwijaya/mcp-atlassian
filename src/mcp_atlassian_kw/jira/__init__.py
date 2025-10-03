@@ -1,4 +1,4 @@
-"""Jira API module for mcp_atlassian.
+"""Jira API module for mcp_atlassian_kw.
 
 This module provides various Jira API client implementations.
 """

@@ -5,8 +5,8 @@ from unittest.mock import patch
 import pytest
 import requests
 
-from mcp_atlassian.confluence.labels import LabelsMixin
-from mcp_atlassian.models.confluence import ConfluenceLabel
+from mcp_atlassian_kw.confluence.labels import LabelsMixin
+from mcp_atlassian_kw.models.confluence import ConfluenceLabel
 
 
 class TestLabelsMixin:
@@ -17,7 +17,7 @@ class TestLabelsMixin:
         """Create a LabelsMixin instance for testing."""
         # LabelsMixin inherits from ConfluenceClient, so we need to create it properly
         with patch(
-            "mcp_atlassian.confluence.labels.ConfluenceClient.__init__"
+            "mcp_atlassian_kw.confluence.labels.ConfluenceClient.__init__"
         ) as mock_init:
             mock_init.return_value = None
             mixin = LabelsMixin()

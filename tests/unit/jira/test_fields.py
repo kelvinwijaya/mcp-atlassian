@@ -5,8 +5,8 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from mcp_atlassian.jira import JiraFetcher
-from mcp_atlassian.jira.fields import FieldsMixin
+from mcp_atlassian_kw.jira import JiraFetcher
+from mcp_atlassian_kw.jira.fields import FieldsMixin
 
 
 class TestFieldsMixin:

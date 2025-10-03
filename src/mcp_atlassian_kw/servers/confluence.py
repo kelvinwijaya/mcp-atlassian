@@ -7,9 +7,9 @@ from typing import Annotated
 from fastmcp import Context, FastMCP
 from pydantic import BeforeValidator, Field
 
-from mcp_atlassian.exceptions import MCPAtlassianAuthenticationError
-from mcp_atlassian.servers.dependencies import get_confluence_fetcher
-from mcp_atlassian.utils.decorators import (
+from mcp_atlassian_kw.exceptions import MCPAtlassianAuthenticationError
+from mcp_atlassian_kw.servers.dependencies import get_confluence_fetcher
+from mcp_atlassian_kw.utils.decorators import (
     check_write_access,
 )
 

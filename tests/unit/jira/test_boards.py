@@ -5,9 +5,9 @@ from unittest.mock import MagicMock
 import pytest
 import requests
 
-from mcp_atlassian.jira import JiraConfig
-from mcp_atlassian.jira.boards import BoardsMixin
-from mcp_atlassian.models.jira import JiraBoard
+from mcp_atlassian_kw.jira import JiraConfig
+from mcp_atlassian_kw.jira.boards import BoardsMixin
+from mcp_atlassian_kw.models.jira import JiraBoard
 
 
 @pytest.fixture

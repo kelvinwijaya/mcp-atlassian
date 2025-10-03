@@ -4,7 +4,7 @@ from unittest.mock import MagicMock, Mock
 
 import pytest
 
-from mcp_atlassian.jira.comments import CommentsMixin
+from mcp_atlassian_kw.jira.comments import CommentsMixin
 
 
 class TestCommentsMixin:

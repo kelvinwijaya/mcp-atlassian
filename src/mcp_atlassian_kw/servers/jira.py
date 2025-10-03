@@ -8,11 +8,11 @@ from fastmcp import Context, FastMCP
 from pydantic import Field
 from requests.exceptions import HTTPError
 
-from mcp_atlassian.exceptions import MCPAtlassianAuthenticationError
-from mcp_atlassian.jira.constants import DEFAULT_READ_JIRA_FIELDS
-from mcp_atlassian.models.jira.common import JiraUser
-from mcp_atlassian.servers.dependencies import get_jira_fetcher
-from mcp_atlassian.utils.decorators import check_write_access
+from mcp_atlassian_kw.exceptions import MCPAtlassianAuthenticationError
+from mcp_atlassian_kw.jira.constants import DEFAULT_READ_JIRA_FIELDS
+from mcp_atlassian_kw.models.jira.common import JiraUser
+from mcp_atlassian_kw.servers.dependencies import get_jira_fetcher
+from mcp_atlassian_kw.utils.decorators import check_write_access
 
 logger = logging.getLogger(__name__)
 

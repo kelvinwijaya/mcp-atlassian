@@ -12,11 +12,11 @@ from fastmcp.client import FastMCPTransport
 from fastmcp.exceptions import ToolError
 from starlette.requests import Request
 
-from src.mcp_atlassian.jira import JiraFetcher
-from src.mcp_atlassian.jira.config import JiraConfig
-from src.mcp_atlassian.servers.context import MainAppContext
-from src.mcp_atlassian.servers.main import AtlassianMCP
-from src.mcp_atlassian.utils.oauth import OAuthConfig
+from src.mcp_atlassian_kw.jira import JiraFetcher
+from src.mcp_atlassian_kw.jira.config import JiraConfig
+from src.mcp_atlassian_kw.servers.context import MainAppContext
+from src.mcp_atlassian_kw.servers.main import AtlassianMCP
+from src.mcp_atlassian_kw.utils.oauth import OAuthConfig
 from tests.fixtures.jira_mocks import (
     MOCK_JIRA_COMMENTS_SIMPLIFIED,
     MOCK_JIRA_ISSUE_RESPONSE_SIMPLIFIED,
@@ -219,7 +219,7 @@ def mock_jira_fetcher():
         ]
     }
 
-    from src.mcp_atlassian.models.jira.common import JiraUser
+    from src.mcp_atlassian_kw.models.jira.common import JiraUser
 
     mock_user = MagicMock(spec=JiraUser)
     mock_user.to_simplified_dict.return_value = {
@@ -273,7 +273,7 @@ def test_jira_mcp(mock_jira_fetcher, mock_base_jira_config):
     test_mcp = AtlassianMCP(
         "TestJira", description="Test Jira MCP Server", lifespan=test_lifespan
     )
-    from src.mcp_atlassian.servers.jira import (
+    from src.mcp_atlassian_kw.servers.jira import (
         add_comment,
         add_worklog,
         batch_create_issues,
@@ -355,7 +355,7 @@ def no_fetcher_test_jira_mcp(mock_base_jira_config):
         description="No Fetcher Test Jira MCP Server",
         lifespan=no_fetcher_test_lifespan,
     )
-    from src.mcp_atlassian.servers.jira import get_issue
+    from src.mcp_atlassian_kw.servers.jira import get_issue
 
     jira_sub_mcp = FastMCP(name="NoFetcherTestJiraSubMCP")
     jira_sub_mcp.tool()(get_issue)
@@ -380,11 +380,11 @@ async def jira_client(test_jira_mcp, mock_jira_fetcher, mock_request):
     """Create a FastMCP client with mocked Jira fetcher and request state."""
     with (
         patch(
-            "src.mcp_atlassian.servers.jira.get_jira_fetcher",
+            "src.mcp_atlassian_kw.servers.jira.get_jira_fetcher",
             AsyncMock(return_value=mock_jira_fetcher),
         ),
         patch(
-            "src.mcp_atlassian.servers.dependencies.get_http_request",
+            "src.mcp_atlassian_kw.servers.dependencies.get_http_request",
             return_value=mock_request,
         ),
     ):
@@ -600,11 +600,11 @@ async def test_no_fetcher_get_issue(no_fetcher_client_fixture, mock_request):
 
     with (
         patch(
-            "src.mcp_atlassian.servers.jira.get_jira_fetcher",
+            "src.mcp_atlassian_kw.servers.jira.get_jira_fetcher",
             AsyncMock(side_effect=mock_get_fetcher_error),
         ),
         patch(
-            "src.mcp_atlassian.servers.dependencies.get_http_request",
+            "src.mcp_atlassian_kw.servers.dependencies.get_http_request",
             return_value=mock_request,
         ),
     ):
@@ -636,17 +636,17 @@ async def test_get_issue_with_user_specific_fetcher_in_state(
     expected_fields_list = ["summary", "status", "issuetype"]
 
     # Import the real get_jira_fetcher to test its interaction with request.state
-    from src.mcp_atlassian.servers.dependencies import (
+    from src.mcp_atlassian_kw.servers.dependencies import (
         get_jira_fetcher as get_jira_fetcher_real,
     )
 
     with (
         patch(
-            "src.mcp_atlassian.servers.dependencies.get_http_request",
+            "src.mcp_atlassian_kw.servers.dependencies.get_http_request",
             return_value=_mock_request_with_fetcher_in_state,
         ) as mock_get_http,
         patch(
-            "src.mcp_atlassian.servers.jira.get_jira_fetcher",
+            "src.mcp_atlassian_kw.servers.jira.get_jira_fetcher",
             side_effect=AsyncMock(wraps=get_jira_fetcher_real),
         ),
     ):
@@ -1027,7 +1027,7 @@ async def test_get_all_projects_tool_authentication_error_handling(
     jira_client, mock_jira_fetcher
 ):
     """Test tool handles authentication errors gracefully."""
-    from mcp_atlassian.exceptions import MCPAtlassianAuthenticationError
+    from mcp_atlassian_kw.exceptions import MCPAtlassianAuthenticationError
 
     mock_jira_fetcher.get_all_projects.side_effect = MCPAtlassianAuthenticationError(
         "Authentication failed"

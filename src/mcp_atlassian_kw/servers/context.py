@@ -4,8 +4,8 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from mcp_atlassian.confluence.config import ConfluenceConfig
-    from mcp_atlassian.jira.config import JiraConfig
+    from mcp_atlassian_kw.confluence.config import ConfluenceConfig
+    from mcp_atlassian_kw.jira.config import JiraConfig
 
 
 @dataclass(frozen=True)

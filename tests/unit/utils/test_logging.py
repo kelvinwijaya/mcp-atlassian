@@ -1,7 +1,7 @@
 import io
 import logging
 
-from mcp_atlassian.utils.logging import setup_logging
+from mcp_atlassian_kw.utils.logging import setup_logging
 
 
 def test_setup_logging_default_level():

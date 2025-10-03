@@ -5,11 +5,11 @@ from unittest.mock import MagicMock, call, patch
 
 import pytest
 
-from mcp_atlassian.jira import JiraFetcher
-from mcp_atlassian.jira.config import JiraConfig
-from mcp_atlassian.jira.projects import ProjectsMixin
-from mcp_atlassian.models.jira.issue import JiraIssue
-from mcp_atlassian.models.jira.search import JiraSearchResult
+from mcp_atlassian_kw.jira import JiraFetcher
+from mcp_atlassian_kw.jira.config import JiraConfig
+from mcp_atlassian_kw.jira.projects import ProjectsMixin
+from mcp_atlassian_kw.models.jira.issue import JiraIssue
+from mcp_atlassian_kw.models.jira.search import JiraSearchResult
 
 
 @pytest.fixture

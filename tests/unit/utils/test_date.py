@@ -2,7 +2,7 @@
 
 import pytest
 
-from mcp_atlassian.utils import parse_date
+from mcp_atlassian_kw.utils import parse_date
 
 
 def test_parse_date_invalid_input():

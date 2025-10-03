@@ -6,9 +6,9 @@ import pytest
 import requests
 from requests import HTTPError
 
-from mcp_atlassian.confluence.search import SearchMixin
-from mcp_atlassian.confluence.utils import quote_cql_identifier_if_needed
-from mcp_atlassian.exceptions import MCPAtlassianAuthenticationError
+from mcp_atlassian_kw.confluence.search import SearchMixin
+from mcp_atlassian_kw.confluence.utils import quote_cql_identifier_if_needed
+from mcp_atlassian_kw.exceptions import MCPAtlassianAuthenticationError
 
 
 class TestSearchMixin:
@@ -19,7 +19,7 @@ class TestSearchMixin:
         """Create a SearchMixin instance for testing."""
         # SearchMixin inherits from ConfluenceClient, so we need to create it properly
         with patch(
-            "mcp_atlassian.confluence.search.ConfluenceClient.__init__"
+            "mcp_atlassian_kw.confluence.search.ConfluenceClient.__init__"
         ) as mock_init:
             mock_init.return_value = None
             mixin = SearchMixin()
